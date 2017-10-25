@@ -29,7 +29,7 @@ Returns `true` if the code is running on a common continuous integration server.
 Uses [is-ci](https://github.com/watson/is-ci).
 
 ```js
-const {isCI} = require(@cypress/deploy-bits)
+const {isCI} = require('@cypress/deploy-bits')
 if (isCI) {
   // we are on CI
 }
@@ -41,7 +41,7 @@ Prints a console warning if the code is not running on CI. Often we prefer deplo
 from CI rather than running the deploy command locally.
 
 ```js
-const {warnIfNotCI} = require(@cypress/deploy-bits)
+const {warnIfNotCI} = require('@cypress/deploy-bits')
 warnIfNotCI()
 ```
 
@@ -50,7 +50,7 @@ warnIfNotCI()
 Returns target deployment environment `staging` or `production`
 
 ```js
-const {getDeployEnvironment} = require(@cypress/deploy-bits)
+const {getDeployEnvironment} = require('@cypress/deploy-bits')
 getDeployEnvironment()
   .then(env => ...)
 ```
@@ -85,7 +85,7 @@ directory is clean (no modified source files). Always returns input environment 
 Curried.
 
 ```js
-const {checkBranchEnvFolder} = require(@cypress/deploy-bits)
+const {checkBranchEnvFolder} = require('@cypress/deploy-bits')
 checkBranchEnvFolder('master')('production')
 // returns a promise resolved with "production"
 // will throw an error if there are modified files
@@ -97,7 +97,7 @@ Returns S3 config loaded from environment variable or local file. If cannot find
 throws an error.
 
 ```js
-const {getS3Config} = require(@cypress/deploy-bits)
+const {getS3Config} = require('@cypress/deploy-bits')
 const config = getS3Config()
 ```
 
@@ -117,7 +117,7 @@ Typical config file in `support/.aws-credentials.json` contains
 Returns an instance of [gulp-awspublish](https://github.com/pgherveou/gulp-awspublish)
 
 ```js
-const {getS3Config, getS3Publisher} = require(@cypress/deploy-bits)
+const {getS3Config, getS3Publisher} = require('@cypress/deploy-bits')
 const config = getS3Config()
 const publisher = getS3Publisher(config['bucket-production'], config.key, config.secret)
 ```
@@ -127,7 +127,7 @@ const publisher = getS3Publisher(config['bucket-production'], config.key, config
 Uploads (diffs) a local folder to AWS S3 folder.
 
 ```js
-const {getS3Config, getS3Publisher, publishToS3} = require(@cypress/deploy-bits)
+const {getS3Config, getS3Publisher, publishToS3} = require('@cypress/deploy-bits')
 const config = getS3Config()
 const publisher = getS3Publisher(config['bucket-production'], config.key, config.secret)
 publishToS3('dist/public', publisher)
