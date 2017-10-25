@@ -2,6 +2,7 @@
 // code related to uploading (publishing) a folder to S3 folder
 //
 const path = require('path')
+const chalk = require('chalk')
 const {
   filenameToShellVariable,
   configFromEnvOrJsonFile
@@ -99,4 +100,28 @@ function publishToS3 (distDir, publisher) {
   })
 }
 
-module.exports = { getS3Config, getS3Publisher, publishToS3 }
+// "normal" folder upload to S3 using default config flow
+function uploadToS3 (folder, env) {
+  la(is.unemptyString(folder), 'missing local folder to upload', folder)
+  la(is.unemptyString(env), 'missing S3 environment', env)
+
+  const config = getS3Config()
+  const bucketName = `bucket-${env}`
+  const bucket = config[bucketName]
+  la(
+    is.unemptyString(bucket),
+    'Could not find a bucket for environment',
+    env,
+    'in AWS config under key',
+    bucketName
+  )
+  console.log('')
+  console.log('Deploying to:', chalk.green(bucket))
+  console.log('')
+
+  const publisher = getS3Publisher(bucket, config.key, config.secret)
+  la(publisher, 'could not get publisher for bucket', bucket)
+  return publishToS3(folder, publisher)
+}
+
+module.exports = { getS3Config, getS3Publisher, publishToS3, uploadToS3 }

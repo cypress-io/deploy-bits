@@ -136,6 +136,16 @@ publishToS3('dist/public', publisher)
 
 Note: if a local folder contains `build.json` it will be uploaded with "no cache" headers.
 
+### uploadToS3
+
+Normal local folder upload to S3 using above functions.
+
+```js
+const {uploadToS3} = require('@cypress/deploy-bits')
+uploadToS3('dist/public', 'production')
+  .then(...)
+```
+
 ### Small print
 
 Support: if you find any problems with this module, email / tweet /
