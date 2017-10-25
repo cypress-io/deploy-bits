@@ -28,6 +28,7 @@ variable.
 Returns target deployment environment `staging` or `production`
 
 ```js
+const {getDeployEnvironment} = require(@cypress/deploy-bits)
 getDeployEnvironment()
   .then(env => ...)
 ```
@@ -53,6 +54,19 @@ const options = {
   }
 }
 getDeployEnvironment(['-e', 'staging']) // yields "staging"
+```
+
+### checkBranchEnvFolder
+
+Checks the branch to environment mapping. For some branches checks if the working
+directory is clean (no modified source files). Always returns input environment name.
+Curried.
+
+```js
+const {checkBranchEnvFolder} = require(@cypress/deploy-bits)
+checkBranchEnvFolder('master')('production')
+// returns a promise resolved with "production"
+// will throw an error if there are modified files
 ```
 
 ### Small print

@@ -90,8 +90,13 @@
   "dependencies": {
     "@cypress/questions-remain": "1.0.1",
     "bluebird": "3.5.1",
+    "chalk": "2.3.0",
+    "check-more-types": "2.24.0",
     "debug": "3.1.0",
+    "gift": "0.10.0",
     "inquirer": "3.3.0",
+    "lazy-ass": "1.6.0",
+    "lodash": "4.17.4",
     "minimist": "1.2.0",
     "ramda": "0.25.0"
   }
