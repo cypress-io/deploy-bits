@@ -122,6 +122,18 @@ const config = getS3Config()
 const publisher = getS3Publisher(config['bucket-production'], config.key, config.secret)
 ```
 
+### publishToS3
+
+Uploads (diffs) a local folder to AWS S3 folder.
+
+```js
+const {getS3Config, getS3Publisher, publishToS3} = require(@cypress/deploy-bits)
+const config = getS3Config()
+const publisher = getS3Publisher(config['bucket-production'], config.key, config.secret)
+publishToS3('dist/public', publisher)
+// returns a promise
+```
+
 ### Small print
 
 Support: if you find any problems with this module, email / tweet /

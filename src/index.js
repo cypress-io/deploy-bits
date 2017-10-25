@@ -4,7 +4,7 @@ const getDeployEnvironment = require('./get-deploy-environment')
 const checkBranchEnvFolder = require('./check-branch-env-folder')
 const warnIfNotCI = require('./warn-if-not-ci')
 const isCI = require('is-ci')
-const { getS3Config, getS3Publisher } = require('./s3-publish')
+const { getS3Config, getS3Publisher, publishToS3 } = require('./s3-publish')
 
 module.exports = {
   getDeployEnvironment,
@@ -12,5 +12,6 @@ module.exports = {
   isCI,
   warnIfNotCI,
   getS3Config,
-  getS3Publisher
+  getS3Publisher,
+  publishToS3
 }
