@@ -134,6 +134,8 @@ publishToS3('dist/public', publisher)
 // returns a promise
 ```
 
+Note: if a local folder contains `build.json` it will be uploaded with "no cache" headers.
+
 ### Small print
 
 Support: if you find any problems with this module, email / tweet /
