@@ -86,8 +86,9 @@ Curried.
 
 ```js
 const {checkBranchEnvFolder} = require('@cypress/deploy-bits')
+// synchronous method
 checkBranchEnvFolder('master')('production')
-// returns a promise resolved with "production"
+// returns "production"
 // will throw an error if there are modified files
 ```
 
