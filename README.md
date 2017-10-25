@@ -20,16 +20,12 @@ npm install --save @cypress/deploy-bits
 
 ### Small print
 
-Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2017
-
-License: MIT - do anything with the code, but don't blame me if it does not work.
-
 Support: if you find any problems with this module, email / tweet /
 [open issue](https://github.com/cypress-io/deploy-bits/issues) on Github
 
 ## MIT License
 
-Copyright (c) 2017 Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt;
+Copyright (c) 2017 Cypress.io
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
