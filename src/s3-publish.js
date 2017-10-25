@@ -47,8 +47,8 @@ function getS3Config () {
 
 function getS3Publisher (bucket, key, secret) {
   la(is.unemptyString(bucket), 'missing S3 bucket', bucket)
-  la(isAWSKey(key), 'invalid AWS key')
-  la(isAWSSecret(key), 'invalid AWS secret')
+  la(isAWSKey(key), 'invalid AWS key with type', typeof key)
+  la(isAWSSecret(secret), 'invalid AWS secret with type', typeof secret)
 
   return awspublish.create({
     httpOptions: {
