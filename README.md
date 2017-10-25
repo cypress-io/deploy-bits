@@ -91,6 +91,27 @@ checkBranchEnvFolder('master')('production')
 // will throw an error if there are modified files
 ```
 
+### getS3Config
+
+Returns S3 config loaded from environment variable or local file. If cannot find either,
+throws an error.
+
+```js
+const {getS3Config} = require(@cypress/deploy-bits)
+const config = getS3Config()
+```
+
+Typical config file in `support/.aws-credentials.json` contains
+
+```json
+{
+  "bucket-production": "<production S3 folder name>"
+  "bucket-staging": "<staging S3 folder name>",
+  "key": "AWS API key",
+  "secret": "AWS API secret"
+}
+```
+
 ### Small print
 
 Support: if you find any problems with this module, email / tweet /
