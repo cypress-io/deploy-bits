@@ -105,7 +105,7 @@ Typical config file in `support/.aws-credentials.json` contains
 
 ```json
 {
-  "bucket-production": "<production S3 folder name>"
+  "bucket-production": "<production S3 folder name>",
   "bucket-staging": "<staging S3 folder name>",
   "key": "AWS API key",
   "secret": "AWS API secret"
