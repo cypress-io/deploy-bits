@@ -84,6 +84,15 @@
     "prettier-standard": "7.0.3",
     "semantic-release": "8.2.0",
     "simple-commit-message": "3.3.2",
+    "snap-shot-it": "4.0.1",
     "standard": "10.0.3"
+  },
+  "dependencies": {
+    "@cypress/questions-remain": "1.0.1",
+    "bluebird": "3.5.1",
+    "debug": "3.1.0",
+    "inquirer": "3.3.0",
+    "minimist": "1.2.0",
+    "ramda": "0.25.0"
   }
 }

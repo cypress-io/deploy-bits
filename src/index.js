@@ -1,3 +1,7 @@
 'use strict'
 
-module.exports = true
+const getDeployEnvironment = require('./get-deploy-environment')
+
+module.exports = {
+  getDeployEnvironment
+}

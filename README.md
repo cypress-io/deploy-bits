@@ -18,6 +18,43 @@ npm install --save @cypress/deploy-bits
 
 ## Use
 
+### Debugging
+
+To debug functions from this module, run the program with `DEBUG=deploy-bits` environment
+variable.
+
+### getDeployEnvironment
+
+Returns target deployment environment `staging` or `production`
+
+```js
+getDeployEnvironment()
+  .then(env => ...)
+```
+
+If the user specified environment using CLI `--environment <name>` option, it will be used.
+Otherwise, user will be prompted to select one.
+
+```
+? Which environment are you deploying? 
+❯ Staging 
+  Production
+```
+
+You can pass list of arguments for this function to parse (by default it uses `process.argv`)
+```js
+getDeployEnvironment(['--environment', 'staging']) // yields "staging"
+```
+and you can even pass [minimist](https://github.com/substack/minimist) parsing options
+```js
+const options = {
+  alias: {
+    environment: 'e'
+  }
+}
+getDeployEnvironment(['-e', 'staging']) // yields "staging"
+```
+
 ### Small print
 
 Support: if you find any problems with this module, email / tweet /
