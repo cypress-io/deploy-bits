@@ -23,6 +23,18 @@ npm install --save @cypress/deploy-bits
 To debug functions from this module, run the program with `DEBUG=deploy-bits` environment
 variable.
 
+### isCI
+
+Returns `true` if the code is running on a common continuous integration server.
+Uses [is-ci](https://github.com/watson/is-ci).
+
+```js
+const {isCI} = require(@cypress/deploy-bits)
+if (isCI) {
+  // we are on CI
+}
+```
+
 ### getDeployEnvironment
 
 Returns target deployment environment `staging` or `production`

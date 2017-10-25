@@ -1,10 +1,14 @@
 'use strict'
 
 /* eslint-env mocha */
-const deployBits = require('.')
+const la = require('lazy-ass')
+const is = require('check-more-types')
 
 describe('@cypress/deploy-bits', () => {
-  it('write this test', () => {
-    console.assert(deployBits, 'should export something')
+  context('isCI', () => {
+    const { isCI } = require('.')
+    it('is a boolean', () => {
+      la(is.bool(isCI))
+    })
   })
 })

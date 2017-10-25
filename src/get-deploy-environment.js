@@ -4,8 +4,17 @@ const R = require('ramda')
 const Promise = require('bluebird')
 const inquirer = require('inquirer')
 const debug = require('debug')('deploy-bits')
+const isCI = require('is-ci')
+
+const cannonAskQuestionOnCI = `
+Cannot ask question
+Running on CI!
+`
 
 function prompt (questions) {
+  if (isCI) {
+    throw new Error(cannonAskQuestionOnCI)
+  }
   return Promise.resolve(inquirer.prompt(questions))
 }
 
