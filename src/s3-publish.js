@@ -3,7 +3,14 @@ const {
   filenameToShellVariable,
   configFromEnvOrJsonFile
 } = require('@cypress/env-or-json-file')
+const la = require('lazy-ass')
 const is = require('check-more-types')
+const awspublish = require('gulp-awspublish')
+const human = require('human-interval')
+
+const isAWSKey = s => is.unemptyString(s) && s.length === 20
+
+const isAWSSecret = s => is.unemptyString(s) && s.length === 40
 
 const isConfig = is.schema({
   'bucket-production': is.unemptyString,
@@ -29,4 +36,21 @@ function getS3Config () {
   return config
 }
 
-module.exports = getS3Config
+function getS3Publisher (bucket, key, secret) {
+  la(is.unemptyString(bucket), 'missing S3 bucket', bucket)
+  la(isAWSKey(key), 'invalid AWS key')
+  la(isAWSSecret(key), 'invalid AWS secret')
+
+  return awspublish.create({
+    httpOptions: {
+      timeout: human('10 minutes')
+    },
+    params: {
+      Bucket: bucket
+    },
+    accessKeyId: key,
+    secretAccessKey: secret
+  })
+}
+
+module.exports = { getS3Config, getS3Publisher }

@@ -97,6 +97,8 @@
     "check-more-types": "2.24.0",
     "debug": "3.1.0",
     "gift": "0.10.0",
+    "gulp-awspublish": "3.3.0",
+    "human-interval": "0.1.6",
     "inquirer": "3.3.0",
     "is-ci": "1.0.10",
     "lazy-ass": "1.6.0",

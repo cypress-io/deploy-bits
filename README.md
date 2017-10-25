@@ -112,6 +112,16 @@ Typical config file in `support/.aws-credentials.json` contains
 }
 ```
 
+### getS3Publisher
+
+Returns an instance of [gulp-awspublish](https://github.com/pgherveou/gulp-awspublish)
+
+```js
+const {getS3Config, getS3Publisher} = require(@cypress/deploy-bits)
+const config = getS3Config()
+const publisher = getS3Publisher(config['bucket-production'], config.key, config.secret)
+```
+
 ### Small print
 
 Support: if you find any problems with this module, email / tweet /
