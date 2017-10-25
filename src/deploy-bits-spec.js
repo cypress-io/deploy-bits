@@ -11,4 +11,11 @@ describe('@cypress/deploy-bits', () => {
       la(is.bool(isCI))
     })
   })
+
+  context('warnIfNotCI', () => {
+    const { warnIfNotCI } = require('.')
+    it('is a function', () => {
+      la(is.fn(warnIfNotCI))
+    })
+  })
 })

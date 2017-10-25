@@ -35,6 +35,16 @@ if (isCI) {
 }
 ```
 
+### warnIfNotCI
+
+Prints a console warning if the code is not running on CI. Often we prefer deploying
+from CI rather than running the deploy command locally.
+
+```js
+const {warnIfNotCI} = require(@cypress/deploy-bits)
+warnIfNotCI()
+```
+
 ### getDeployEnvironment
 
 Returns target deployment environment `staging` or `production`
