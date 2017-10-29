@@ -78,6 +78,16 @@ const options = {
 getDeployEnvironment(['-e', 'staging']) // yields "staging"
 ```
 
+### getBranch
+
+Resolves with current branch.
+
+```js
+const {getBranch} = require('@cypress/deploy-bits')
+getBranch()
+  .then(branch => ...)
+```
+
 ### checkBranchEnvFolder
 
 Checks the branch to environment mapping. For some branches checks if the working

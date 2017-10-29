@@ -10,6 +10,7 @@ const {
   publishToS3,
   uploadToS3
 } = require('./s3-publish')
+const { getBranch } = require('@cypress/commit-info')
 
 module.exports = {
   getDeployEnvironment,
@@ -19,5 +20,6 @@ module.exports = {
   getS3Config,
   getS3Publisher,
   publishToS3,
-  uploadToS3
+  uploadToS3,
+  getBranch
 }
