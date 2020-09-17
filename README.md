@@ -4,7 +4,7 @@
 
 [![NPM][npm-icon] ][npm-url]
 
-[![Build status][ci-image] ][ci-url]
+[![ci status][ci image]][ci url]
 [![semantic-release][semantic-image] ][semantic-url]
 [![js-standard-style][standard-image]][standard-url]
 
@@ -59,8 +59,8 @@ If the user specified environment using CLI `--environment <name>` option, it wi
 Otherwise, user will be prompted to select one.
 
 ```
-? Which environment are you deploying? 
-❯ Staging 
+? Which environment are you deploying?
+❯ Staging
   Production
 ```
 
@@ -189,8 +189,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 [npm-icon]: https://nodei.co/npm/@cypress/deploy-bits.svg?downloads=true
 [npm-url]: https://npmjs.org/package/@cypress/deploy-bits
-[ci-image]: https://travis-ci.org/cypress-io/deploy-bits.svg?branch=master
-[ci-url]: https://travis-ci.org/cypress-io/deploy-bits
+[ci image]: https://github.com/cypress-io/deploy-bits/workflows/ci/badge.svg?branch=master
+[ci url]: https://github.com/cypress-io/deploy-bits/actions
 [semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-url]: https://github.com/semantic-release/semantic-release
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg

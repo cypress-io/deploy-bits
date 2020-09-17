@@ -62,9 +62,10 @@
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
     "test": "npm run unit",
     "unit": "mocha src/*-spec.js",
-    "semantic-release": "semantic-release pre && npm publish --access public && semantic-release post"
+    "semantic-release": "semantic-release"
   },
   "release": {
+    "access": "public",
     "analyzeCommits": "simple-commit-message",
     "generateNotes": "github-post-release",
     "verifyRelease": {
@@ -84,7 +85,7 @@
     "nsp": "3.0.0",
     "pre-git": "3.15.3",
     "prettier-standard": "7.0.3",
-    "semantic-release": "8.2.2",
+    "semantic-release": "^17.1.2",
     "simple-commit-message": "3.3.2",
     "snap-shot-it": "4.0.1",
     "standard": "10.0.3"
